@@ -42,11 +42,11 @@ def login_view(request):
         # Manual check for specific credentials
         if email == "linqconnect@gmail.com" and password == "LinQforpass@123":
             user = authenticate(request, username=email, password=password)
-            if user is not None:
-                login(request, user)
-                return redirect("/dashboard")
-            else:
-                return render(request, 'login.html', {'error': "Authentication failed. Please try again."})
+            # if user is not None:
+            #     login(request, user)
+            #     return redirect("/dashboard")
+            # else:
+            #     return render(request, 'login.html', {'error': "Authentication failed. Please try again."})
         
         return render(request, 'login.html', {'error': "Invalid credentials. Please try again."})
         # test temp
