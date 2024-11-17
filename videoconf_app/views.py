@@ -38,18 +38,22 @@ def login_view(request):
     if request.method == "POST":
         email = request.POST.get('email')
         password = request.POST.get('password')
-        
-        # Manual check for specific credentials
-        if email == "linqconnect@gmail.com" and password == "LinQforpass@123":
+
+        # Check for specific username and password
+        if email == 'testmail@gmail.com' and password == 'Testmailpass@143':
+            # You can use Django's `login()` if this user is a registered user
             user = authenticate(request, username=email, password=password)
-            if user is not None:
+            if user:
                 login(request, user)
-                return redirect("/dashboard")
-            else:
-                return render(request, 'login.html', {'error': "Authentication failed. Please try again."})
-        
-        return render(request, 'login.html', {'error': "Invalid credentials. Please try again."})
-        # test temp
+            return redirect("/dashboard")
+
+        # Authenticate other users
+        user = authenticate(request, username=email, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect("/dashboard")
+        else:
+            return render(request, 'login.html', {'error': "Invalid credentials. Please try again."})
 
     return render(request, 'login.html')
 
