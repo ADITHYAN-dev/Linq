@@ -21,18 +21,38 @@ def register(request):
     return render(request, 'register.html')
 
 
+# def login_view(request):
+#     if request.method=="POST":
+#         email = request.POST.get('email')
+#         password = request.POST.get('password')
+#         user = authenticate(request, username=email, password=password)
+#         if user is not None:
+#             login(request, user)
+#             return redirect("/dashboard")
+#         else:
+#             return render(request, 'login.html', {'error': "Invalid credentials. Please try again."})
+
+#     return render(request, 'login.html')
+
 def login_view(request):
-    if request.method=="POST":
+    if request.method == "POST":
         email = request.POST.get('email')
         password = request.POST.get('password')
-        user = authenticate(request, username=email, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect("/dashboard")
-        else:
-            return render(request, 'login.html', {'error': "Invalid credentials. Please try again."})
+        
+        # Manual check for specific credentials
+        if email == "linqconnect@gmail.com" and password == "LinQforpass@123":
+            user = authenticate(request, username=email, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect("/dashboard")
+            else:
+                return render(request, 'login.html', {'error': "Authentication failed. Please try again."})
+        
+        return render(request, 'login.html', {'error': "Invalid credentials. Please try again."})
+        # test temp
 
     return render(request, 'login.html')
+
 
 @login_required
 def dashboard(request):
