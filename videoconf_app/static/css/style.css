@@ -1,72 +1,71 @@
 /* Import Google font - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-body{
+
+body {
   min-height: 100vh;
   width: 100%;
-  background: #009579;
+  background: #121212; /* Dark background */
+  color: #ffffff; /* Light text color */
 }
-.container{
+
+.container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
   max-width: 430px;
   width: 100%;
-  background: #fff;
+  background: #1f3b4d; /* Darker container */
   border-radius: 7px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.3);
 }
-/* .container .registration{
-  display: none;
-}
-#check:checked ~ .registration{
-  display: block;
-}
-#check:checked ~ .login{
-  display: none;
-}
-#check{
-  display: none;
-} */
-.container .form{
+
+.container .form {
   padding: 2rem;
 }
-.form header{
+
+.form header {
   font-size: 2rem;
   font-weight: 500;
   text-align: center;
   margin-bottom: 1.5rem;
 }
- .form input{
-   height: 60px;
-   width: 100%;
-   padding: 0 15px;
-   font-size: 17px;
-   margin-bottom: 1.3rem;
-   border: 1px solid #ddd;
-   border-radius: 6px;
-   outline: none;
- }
- .form input:focus{
-   box-shadow: 0 1px 0 rgba(0,0,0,0.2);
- }
-.form a{
+
+.form input {
+  height: 60px;
+  width: 100%;
+  padding: 0 15px;
+  font-size: 17px;
+  margin-bottom: 1.3rem;
+  border: 1px solid #1a2a37; /* Border color */
+  border-radius: 6px;
+  outline: none;
+}
+
+.form input:focus {
+  box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+}
+
+.form a {
   font-size: 16px;
-  color: #009579;
+  color: #4CAF50; /* Button-like color for links */
   text-decoration: none;
 }
-.form a:hover{
+
+.form a:hover {
   text-decoration: underline;
 }
-.form input.button{
-  color: #fff;
-  background: #009579;
+
+.form input.button {
+  color: #ffffff;
+  background: #1f3b4d; /* Dark button color */
   font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: 1px;
@@ -74,48 +73,46 @@ body{
   cursor: pointer;
   transition: 0.4s;
 }
-.form input.button:hover{
-  background: #006653;
+
+.form input.button:hover {
+  background: #163041; /* Darker hover color */
 }
-.signup{
+
+.signup {
   font-size: 17px;
   text-align: center;
 }
-.signup label{
-  color: #009579;
+
+.signup label {
+  color: #4CAF50; /* Same green color as the links */
   cursor: pointer;
 }
-.signup label:hover{
+
+.signup label:hover {
   text-decoration: underline;
 }
 
-/* Center the div with class name 'intro'
-    and set the width to 100% */
+/* Center the div with class name 'intro' */
 .intro {
   margin: auto;
   width: 100%;
   padding: 10px;
 }
 
-/* Set the background color to green
-    and the text color to white */
 .intro {
-  color: white;
+  color: white; /* White text */
 }
 
-/* Make the text inside the div with class name intro look bold and attractive */
 .intro h1 {
   font-size: 50px;
   font-weight: bold;
   text-align: center;
 }
 
-/* center the h2 tag inside the div with class name intro */
 .intro h2 {
   text-align: center;
 }
 
-/* vertically align the div with class name intro to the center of the page */
 .intro {
   position: absolute;
   top: 50%;
@@ -123,9 +120,8 @@ body{
   transform: translate(-50%, -50%);
 }
 
-/* make the buttons inside the div with class name intro look attractive */
 .intro a {
-  background-color: #4CAF50;
+  background-color: #1f3b4d; /* Dark button background */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -137,7 +133,6 @@ body{
   cursor: pointer;
 }
 
-/* center the buttons inside the div with class name intro */
 .intro a {
   margin-top: 7px;
   display: block;
@@ -146,20 +141,18 @@ body{
   width: 50%;
 }
 
-/* make the buttons inside the div with class name intro look attractive when hovered */
 .intro a:hover {
-  background-color: #45a049;
+  background-color: #163041; /* Darker button hover */
 }
 
-/* center the div named dashboard */
+/* Dashboard Styling */
 .dashboard {
   margin: auto;
   width: 100%;
   padding: 10px;
-  color: white;
+  color: white; /* White text */
 }
 
-/** align the text inside the div named dashboard to the center */
 .dashboard h1 {
   font-size: 50px;
   font-weight: bold;
@@ -167,7 +160,7 @@ body{
 }
 
 .dashboard a {
-  background-color: #4CAF50;
+  background-color: #1f3b4d; /* Dark button background */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -188,7 +181,7 @@ body{
 }
 
 .dashboard a:hover {
-  background-color: #45a049;
+  background-color: #163041; /* Darker button hover */
 }
 
 .dashboard {
