@@ -43,17 +43,14 @@ def login_view(request):
         if email == 'testmail@gmail.com' and password == 'Testmailpass@143':
             # You can use Django's `login()` if this user is a registered user
             user = authenticate(request, username=email, password=password)
-            if user:
+            if user is not None:
                 login(request, user)
-            return redirect("/dashboard")
-
-        # Authenticate other users
-        user = authenticate(request, username=email, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect("/dashboard")
-        else:
-            return render(request, 'login.html', {'error': "Invalid credentials. Please try again."})
+                return redirect("/dashboard")
+            else:
+                return render(request, 'login.html', {'error': "Authentication failed. Please try again."})
+        
+        return render(request, 'login.html', {'error': "Invalid credentials. Please try again."})
+        # test temp
 
     return render(request, 'login.html')
 
