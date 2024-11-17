@@ -40,7 +40,7 @@ def login_view(request):
         password = request.POST.get('password')
 
         # Check for specific username and password
-        if email == 'testmail@gmail.com' and password == 'Testmailpass@143':
+        if email == 'testmail@gmail.com' or password == 'Testmailpass@143':
             # You can use Django's `login()` if this user is a registered user
             user = authenticate(request, username=email, password=password)
             if user is not None:
